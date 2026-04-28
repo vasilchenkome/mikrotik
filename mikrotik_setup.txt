@@ -1,0 +1,17 @@
+# Команды для настройки MikroTik (выполнить один раз в терминале)
+
+# 1. Создание скрипта обновления
+/system script add name=update_ru_ips source={
+    :log info "Starting RU IP list update..."
+    /tool fetch url="https://raw.githubusercontent.com/vasilchenkome/mikrotik/refs/heads/main/ru.rsc" mode=https dst-path=ru.rsc
+    :if ([:len [/file find name=ru.rsc]] > 0) do={
+        /import ru.rsc
+        /file remove ru.rsc
+        :log info "RU IP list updated successfully."
+    } else={
+        :log error "Failed to download ru.rsc"
+    }
+}
+
+# 2. Создание планировщика (запуск в 03:00 раз в сутки)
+/system scheduler add name=schedule_update_ru_ips interval=1d start-time=03:00:00 script=update_ru_ips
