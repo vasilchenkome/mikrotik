@@ -6871,6 +6871,7 @@ add list="country_ru" address=193.105.131.0/24 comment="Imported by Gitea Action
 add list="country_ru" address=193.105.156.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=193.105.169.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=193.105.175.0/24 comment="Imported by Gitea Action"
+add list="country_ru" address=193.105.194.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=193.105.198.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=193.105.213.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=193.105.222.0/24 comment="Imported by Gitea Action"
