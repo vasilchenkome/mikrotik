@@ -7909,6 +7909,7 @@ add list="country_ru" address=195.138.232.0/21 comment="Imported by Gitea Action
 add list="country_ru" address=195.140.144.0/22 comment="Imported by Gitea Action"
 add list="country_ru" address=195.140.180.0/22 comment="Imported by Gitea Action"
 add list="country_ru" address=195.140.204.0/22 comment="Imported by Gitea Action"
+add list="country_ru" address=195.140.216.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=195.144.0.0/23 comment="Imported by Gitea Action"
 add list="country_ru" address=195.144.6.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=195.144.29.0/24 comment="Imported by Gitea Action"
