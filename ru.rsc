@@ -5965,6 +5965,7 @@ add list="country_ru" address=185.165.160.0/22 comment="Imported by Gitea Action
 add list="country_ru" address=185.165.200.0/22 comment="Imported by Gitea Action"
 add list="country_ru" address=185.165.216.0/22 comment="Imported by Gitea Action"
 add list="country_ru" address=185.165.224.0/22 comment="Imported by Gitea Action"
+add list="country_ru" address=185.166.2.0/24 comment="Imported by Gitea Action"
 add list="country_ru" address=185.166.16.0/22 comment="Imported by Gitea Action"
 add list="country_ru" address=185.166.72.0/22 comment="Imported by Gitea Action"
 add list="country_ru" address=185.166.196.0/22 comment="Imported by Gitea Action"
