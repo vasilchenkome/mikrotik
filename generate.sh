@@ -2,7 +2,8 @@
 
 # Configuration
 COUNTRY_CODE="ru"
-LIST_NAME="country_ru"
+ROUTE_COMMENT="country_ru"
+GATEWAY="192.168.0.1"
 OUTPUT_FILE="ru.rsc"
 URL="https://raw.githubusercontent.com/ipverse/country-ip-blocks/master/country/${COUNTRY_CODE}/ipv4-aggregated.txt"
 
@@ -16,16 +17,14 @@ fi
 
 echo "Generating MikroTik script..."
 
-# Start with cleaning the existing list
-echo "/ip firewall address-list remove [find list=\"${LIST_NAME}\"]" > "$OUTPUT_FILE"
+# Start with cleaning the existing routes
+echo "/ip route remove [find comment=\"${ROUTE_COMMENT}\"]" > "$OUTPUT_FILE"
 
-# Use a loop to add addresses. 
-# For performance in ROS 7, we can use a more compact format or just individual lines.
-# Given the size (thousands of entries), individual lines are safer for 'import' stability.
-echo "/ip firewall address-list" >> "$OUTPUT_FILE"
+# Add each subnet as a static route via the configured gateway.
+echo "/ip route" >> "$OUTPUT_FILE"
 while read -r line; do
     if [[ ! -z "$line" && "$line" != "#"* ]]; then
-        echo "add list=\"${LIST_NAME}\" address=$line comment=\"Imported by Gitea Action\"" >> "$OUTPUT_FILE"
+        echo "add dst-address=$line gateway=${GATEWAY} comment=\"${ROUTE_COMMENT}\"" >> "$OUTPUT_FILE"
     fi
 done <<< "$IPS"
 
