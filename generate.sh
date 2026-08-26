@@ -5,7 +5,7 @@ COUNTRY_CODE="ru"
 ROUTE_COMMENT="country_ru"
 GATEWAY="192.168.0.1"
 OUTPUT_FILE="ru.rsc"
-URL="https://raw.githubusercontent.com/ipverse/country-ip-blocks/master/country/${COUNTRY_CODE}/ipv4-aggregated.txt"
+URL="https://raw.githubusercontent.com/ipverse/country-ip-blocks/refs/heads/master/country/${COUNTRY_CODE}/ipv4-aggregated.txt"
 
 echo "Downloading IP list for ${COUNTRY_CODE}..."
 IPS=$(curl -sL "$URL")
